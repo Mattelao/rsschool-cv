@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/*Стили для container*/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*Стили для intro*/
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: url(../images/intro_fon.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.intro_inner {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+.intro_suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 60px;
+    font-weight: 400;
+    text-align: center;
+    margin: 100px auto 10px;    
+    color: white;
+}
+
+.intro_title {
+    font-size: 120px;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+    text-align: center;
+    line-height: 1;
+    color: white;
+}
+
+@media screen and (max-width: 730px) {
+    .intro_title {
+       font-size: 15vw;
+    }
+    .intro_suptitle {
+        font-size: 7vw;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    .intro_title {
+       font-size: 15vh;
+    }
+    .intro_suptitle {
+        font-size: 7vh;
+    }
+}
+
+.intro_title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: white;
+    margin: 6vh auto 5vh;
+}
+
+/*Стили для header*/
+.header {
+    padding-top: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.header_inner {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    float: left;
+    padding-left: 20px;
+    color: white;
+}
+
+@media screen and (max-width: 730px) {
+    .header_logo {
+       font-size: 5vw;
+       float: none;
+       text-align: center;
+       padding-left: 0;
+    }
+}
+
+/*Стили для nav*/
+.nav {
+    text-transform: uppercase;
+    float: right;
+    text-align: right;
+    display: block;
+}
+
+.nav-link {
+    font-weight: 500;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s linear;
+}
+
+.nav-link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    background-color: #fbdd89;
+    position: absolute;
+    transition: opacity 0.2s linear;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.nav-link:hover:after,
+.nav-link.active:after {
+    opacity: 1;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: #fbdd89;
+}
+
+@media screen and (max-width: 730px) {
+    .nav {
+       font-size: 2vw;
+       float: none;
+       text-align: center;
+    }
+    .nav-link {
+        margin: 1.2vh;
+    }
+}
+
+/*Стили для Button*/
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    border: 3px solid white;
+    padding: 5px 25px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 auto 5vh;
+    transition: color 0.2s linear;
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+/*Стили для Slider*/
+.slider {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    max-width: 80%;
+    margin: 0 10%;
+}
+
+.slider_item {
+    font-size: 18px;
+    width: 23%;
+    text-transform: uppercase;
+    padding: 20px 0;
+    opacity: 0.7;
+    position: relative;
+    border-top: 3px solid white;
+    color: white;
+}
+
+.slider_item.active {
+    opacity: 1;
+}
+
+.slider_item.active:before {
+    content: "";
+    display: block;
+    width: 25%;
+    height: 3px;
+    background-color: #f38181;
+    
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 1;
+}
+
+.slider_num {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 745px) {
+    .slider {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        max-width: 80%;
+        margin: 0 10%;
+        text-align: center;
+    }
+    .slider_item {
+        word-spacing: 9999px;
+        font-size: 4vw;
+    }
+}
